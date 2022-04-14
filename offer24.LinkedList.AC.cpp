@@ -4,13 +4,14 @@ class Solution {
     if (!head) {
       return nullptr;
     }
-    ListNode* new_head_header = new ListNode(0);
+    ListNode* new_head = new ListNode(0);
+    ListNode* current_node;
     while (head) {
-      ListNode* new_node = new ListNode(head->val);
-      new_node->next = new_head_header->next;
-      new_head_header->next = new_node;
+      current_node = head;
       head = head->next;
+      current_node->next = new_head->next;
+      new_head->next = current_node;
     }
-    return new_head_header->next;
+    return new_head->next;
   }
 };

@@ -1,0 +1,16 @@
+std::vector<int> history;
+  if (history.empty() || 1 == history.size()) {
+    return;
+  }
+  auto reverse_iter = history.end() - 1;
+  for (auto iter = history.begin(); iter != history.end();) {
+    if (reverse_iter == iter) {
+      return;
+    }
+    if (*iter == 0) {
+      std::swap(iter, reverse_iter);
+      --reverse_iter;
+    } else {
+      ++iter;
+    }
+  }
