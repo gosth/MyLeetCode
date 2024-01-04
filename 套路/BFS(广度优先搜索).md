@@ -58,33 +58,30 @@ void BFS(TreeNode* node) {
   matrix[1][2] = 1;  
   matrix[2][1] = 1;
 
-  void BFS(int node, std::vector<std::vector<int>>& matrix) {
-            std::deque<int> q;
-            std::vector<int> result;
-            // 访问过的节点
-            std::set<int> visited;
-            visited.emplace(node);
-            q.emplace_back(node);
-            result.emplace_back(node);
-            while(!q.empty()){
-                auto& current = q.front();
-                q.pop_front();
-                for (int i = 0; i < n; ++i) {
-                    if (matrix[current][i]) {
-                        if (visited.find(i) != visited.end()) {
-                             matrix[current][i] = 0;
-                             matrix[i][current] = 0;
-                            continue;
-                        }
-                        q.emplace_back(i);
-                        visited.emplace(i);
-                        result.emplace_back(i);
-                        matrix[current][i] = 0;
-                        matrix[i][current] = 0;
-                    }
-                }
-            }
+  std::vector<int> BFS(int node, std::vector<std::vector<int>>& matrix, int n) {
+  std::deque<int> q;
+  std::vector<int> result;
+  // 访问过的节点
+  std::set<int> visited;
+  visited.emplace(node);
+  q.emplace_back(node);
+  result.emplace_back(node);
+  while (!q.empty()) {
+    auto& current = q.front();
+    q.pop_front();
+    for (int i = 0; i < n; ++i) {
+      if (matrix[current][i]) {
+        if (visited.find(i) != visited.end()) {
+          continue;
+        }
+        q.emplace_back(i);
+        visited.emplace(i);
+        result.emplace_back(i);
+      }
+    }
   }
+  return result;
+}
 ```
 
 
