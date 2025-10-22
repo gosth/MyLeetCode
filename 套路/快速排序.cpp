@@ -22,7 +22,7 @@ public:
         int ge = right; // ge : greater equals，初始化为right是为了让(ge, right]区间为空
         // all in nums[left + 1, le) <= pivot
         // all in nums(ge, right] >= pivot
-        // [le, ge]是待处理未知区域
+        // [le, ge]是待处理的未知区域
         // 在每次循环前，循环不变量都是满足定义的
         // 循环体中，循环不变量可能暂时被打破。循环体中会有操作，保证下次循环前，循环不变量再次满足定义
         while (true) {
