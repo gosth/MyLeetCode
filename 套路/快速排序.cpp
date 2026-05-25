@@ -37,7 +37,8 @@ using namespace std;
 //   4. nums[le] 与 pivot 比较用严格 <，nums[ge] 与 pivot 比较用严格 >
 //      等于 pivot 的元素不急着归类，留给 swap 均匀分散到两侧
 //      若用 <= 和 >=，全相同数组一侧为空，退化 O(n²)
-//      例：[3,3,3] 用 <=，le 一路冲到底，每次只分出一个元素
+//      例：[3,3,3] 用 <=，le 一路冲到底，每次 Partition 只分出一个元素（pivot），
+//      剩余 n-1 个元素全留在同一侧 → 递归深度 n 层，每层 O(n) → 总复杂度 O(n²)
 //
 //   5. 循环结束后 swap(nums[left], nums[ge])
 //      循环结束时 ge < le，ge 属于 [left, le) 故 nums[ge] <= pivot，交换不会破坏分区
@@ -69,7 +70,8 @@ public:
         // 例：[3,5] le=ge=1。用 < 则跳过循环，ge 仍指向 5 > pivot，swap 后 [5,3] 分区错误
         while (le <= ge) {
             // 比较用严格 < 和 >：等于 pivot 的不跳过，留给 swap 均匀分散到两侧
-            // 例：[3,3,3] 若用 <=，le 一路冲到底，退化 O(n²)
+            // 例：[3,3,3] 若用 <=，le 一路冲到底，每次 Partition 只分出一个元素（pivot），
+            // 剩余 n-1 个元素全留在同一侧 → 递归 n 层，每层 O(n) → 退化 O(n²)
             while (le <= ge && nums[le] < pivot) ++le;
             while (le <= ge && nums[ge] > pivot) --ge;
             // 内层 while 可能让 le 越过 ge，必须再确认，否则交换已分好的元素
