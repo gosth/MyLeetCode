@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" width="720" height="220" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif" font-size="13">
+  <!-- 根节点 -->
+  <rect x="240" y="10" width="240" height="36" rx="8" fill="#f0f0f0" stroke="#555" stroke-width="2"/>
+  <text x="360" y="33" text-anchor="middle" font-weight="bold" font-size="14" fill="#333">快排 = Partition + 递归</text>
+
+  <!-- 连线到三个子节点 -->
+  <line x1="300" y1="46" x2="160" y2="75" stroke="#555" stroke-width="1.5"/>
+  <line x1="360" y1="46" x2="360" y2="75" stroke="#555" stroke-width="1.5"/>
+  <line x1="420" y1="46" x2="560" y2="75" stroke="#555" stroke-width="1.5"/>
+
+  <!-- 子节点 1：不变量 -->
+  <rect x="50" y="75" width="220" height="50" rx="8" fill="#e8f5e8" stroke="#393" stroke-width="2"/>
+  <text x="160" y="95" text-anchor="middle" font-weight="bold" font-size="12" fill="#262">不变量</text>
+  <text x="160" y="113" text-anchor="middle" font-size="11" fill="#444">[≤ pivot | 未处理(双闭) | ≥ pivot]</text>
+
+  <!-- 子节点 2：进展策略 -->
+  <rect x="280" y="75" width="160" height="50" rx="8" fill="#fff8dc" stroke="#c90" stroke-width="2"/>
+  <text x="360" y="95" text-anchor="middle" font-weight="bold" font-size="12" fill="#960">进展策略</text>
+  <text x="360" y="113" text-anchor="middle" font-size="11" fill="#444">le走 / ge退 / swap</text>
+
+  <!-- 子节点 3：性能决策 -->
+  <rect x="450" y="75" width="220" height="50" rx="8" fill="#e8e8ff" stroke="#36c" stroke-width="2"/>
+  <text x="560" y="95" text-anchor="middle" font-weight="bold" font-size="12" fill="#239">性能决策</text>
+  <text x="560" y="113" text-anchor="middle" font-size="11" fill="#444">严格 &lt; &gt;（等值均分）</text>
+
+  <!-- 箭头到推导结果 -->
+  <line x1="160" y1="125" x2="160" y2="145" stroke="#393" stroke-width="1.5" marker-end="url(#arrow-g)"/>
+  <line x1="360" y1="125" x2="360" y2="145" stroke="#c90" stroke-width="1.5" marker-end="url(#arrow-y)"/>
+  <line x1="560" y1="125" x2="560" y2="145" stroke="#36c" stroke-width="1.5" marker-end="url(#arrow-b)"/>
+
+  <!-- 箭头 markers -->
+  <defs>
+    <marker id="arrow-g" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#393"/></marker>
+    <marker id="arrow-y" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c90"/></marker>
+    <marker id="arrow-b" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#36c"/></marker>
+  </defs>
+
+  <!-- 推导结果 -->
+  <text x="160" y="162" text-anchor="middle" font-size="12" fill="#262">→ 推边界（4处 le≤ge）</text>
+  <text x="360" y="162" text-anchor="middle" font-size="12" fill="#960">→ 推骨架（while+if）</text>
+  <text x="560" y="162" text-anchor="middle" font-size="12" fill="#239">→ 推比较符号</text>
+
+  <!-- 底部推导路径 -->
+  <line x1="50" y1="180" x2="670" y2="180" stroke="#ddd" stroke-width="1"/>
+  <text x="360" y="200" text-anchor="middle" font-size="13" font-weight="bold" fill="#555">推导路径：画不变量 → 写骨架 → 填 le&lt;=ge → 选 &lt;&gt; → 换 ge</text>
+  <text x="360" y="216" text-anchor="middle" font-size="11" fill="#888">口诀：双闭、严格、再判、换 ge</text>
+</svg>

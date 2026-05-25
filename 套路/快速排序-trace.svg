@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 600" width="700" height="600" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif" font-size="13">
+  <defs>
+    <marker id="ah-y" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c90"/></marker>
+    <marker id="ah-y2" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto"><path d="M8,0 L0,3 L8,6" fill="#c90"/></marker>
+    <marker id="ah-r" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c00"/></marker>
+    <marker id="ah-r2" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto"><path d="M8,0 L0,3 L8,6" fill="#c00"/></marker>
+  </defs>
+
+  <!-- 标题 -->
+  <text x="350" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Partition 执行 trace：nums = [3, 1, 5, 2, 4]，pivot = 3</text>
+
+  <!-- ===== 第 1 帧：初始 ===== -->
+  <text x="20" y="60" font-size="12" font-weight="bold" fill="#555">初始</text>
+  <!-- 指针在上方 -->
+  <text x="125" y="40" text-anchor="middle" font-size="10" fill="#900">pivot</text>
+  <text x="180" y="40" text-anchor="middle" font-size="10" font-weight="bold" fill="#393">le</text>
+  <text x="345" y="40" text-anchor="middle" font-size="10" font-weight="bold" fill="#36c">ge</text>
+  <!-- 格子 -->
+  <rect x="100" y="46" width="50" height="36" rx="4" fill="#ffe5e5" stroke="#c00" stroke-width="1.5"/>
+  <rect x="155" y="46" width="50" height="36" rx="4" fill="#fff8dc" stroke="#c90" stroke-width="1.5"/>
+  <rect x="210" y="46" width="50" height="36" rx="4" fill="#fff8dc" stroke="#c90" stroke-width="1.5"/>
+  <rect x="265" y="46" width="50" height="36" rx="4" fill="#fff8dc" stroke="#c90" stroke-width="1.5"/>
+  <rect x="320" y="46" width="50" height="36" rx="4" fill="#fff8dc" stroke="#c90" stroke-width="1.5"/>
+  <text x="125" y="69" text-anchor="middle" font-size="15" font-weight="bold" fill="#900">3</text>
+  <text x="180" y="69" text-anchor="middle" font-size="15" fill="#333">1</text>
+  <text x="235" y="69" text-anchor="middle" font-size="15" fill="#333">5</text>
+  <text x="290" y="69" text-anchor="middle" font-size="15" fill="#333">2</text>
+  <text x="345" y="69" text-anchor="middle" font-size="15" fill="#333">4</text>
+
+  <!-- ===== 第 2 帧：le 扫描 ===== -->
+  <text x="20" y="138" font-size="12" font-weight="bold" fill="#555">le 扫描</text>
+  <text x="235" y="118" text-anchor="middle" font-size="10" font-weight="bold" fill="#393">le</text>
+  <text x="345" y="118" text-anchor="middle" font-size="10" font-weight="bold" fill="#36c">ge</text>
+  <rect x="100" y="124" width="50" height="36" rx="4" fill="#ffe5e5" stroke="#c00" stroke-width="1.5"/>
+  <rect x="155" y="124" width="50" height="36" rx="4" fill="#e8f5e8" stroke="#393" stroke-width="1.5"/>
+  <rect x="210" y="124" width="50" height="36" rx="4" fill="#fff8dc" stroke="#c90" stroke-width="1.5"/>
+  <rect x="265" y="124" width="50" height="36" rx="4" fill="#fff8dc" stroke="#c90" stroke-width="1.5"/>
+  <rect x="320" y="124" width="50" height="36" rx="4" fill="#fff8dc" stroke="#c90" stroke-width="1.5"/>
+  <text x="125" y="147" text-anchor="middle" font-size="15" font-weight="bold" fill="#900">3</text>
+  <text x="180" y="147" text-anchor="middle" font-size="15" fill="#262">1</text>
+  <text x="235" y="147" text-anchor="middle" font-size="15" fill="#333">5</text>
+  <text x="290" y="147" text-anchor="middle" font-size="15" fill="#333">2</text>
+  <text x="345" y="147" text-anchor="middle" font-size="15" fill="#333">4</text>
+  <text x="440" y="140" font-size="11" fill="#888">1&lt;3, le++; 5&#x2265;3, 停</text>
+
+  <!-- ===== 第 3 帧：ge 扫描 ===== -->
+  <text x="20" y="220" font-size="12" font-weight="bold" fill="#555">ge 扫描</text>
+  <text x="235" y="200" text-anchor="middle" font-size="10" font-weight="bold" fill="#393">le</text>
+  <text x="290" y="200" text-anchor="middle" font-size="10" font-weight="bold" fill="#36c">ge</text>
+  <rect x="100" y="206" width="50" height="36" rx="4" fill="#ffe5e5" stroke="#c00" stroke-width="1.5"/>
+  <rect x="155" y="206" width="50" height="36" rx="4" fill="#e8f5e8" stroke="#393" stroke-width="1.5"/>
+  <rect x="210" y="206" width="50" height="36" rx="4" fill="#fff8dc" stroke="#c90" stroke-width="1.5"/>
+  <rect x="265" y="206" width="50" height="36" rx="4" fill="#fff8dc" stroke="#c90" stroke-width="1.5"/>
+  <rect x="320" y="206" width="50" height="36" rx="4" fill="#e8e8ff" stroke="#36c" stroke-width="1.5"/>
+  <text x="125" y="229" text-anchor="middle" font-size="15" font-weight="bold" fill="#900">3</text>
+  <text x="180" y="229" text-anchor="middle" font-size="15" fill="#262">1</text>
+  <text x="235" y="229" text-anchor="middle" font-size="15" fill="#333">5</text>
+  <text x="290" y="229" text-anchor="middle" font-size="15" fill="#333">2</text>
+  <text x="345" y="229" text-anchor="middle" font-size="15" fill="#239">4</text>
+  <text x="440" y="220" font-size="11" fill="#888">4&gt;3, ge--; 2&#x2264;3, 停</text>
+  <!-- swap 箭头在格子下方 -->
+  <path d="M235,244 C235,274 290,274 290,244" fill="none" stroke="#c90" stroke-width="2" marker-start="url(#ah-y2)" marker-end="url(#ah-y)"/>
+  <text x="262" y="286" text-anchor="middle" font-size="11" font-weight="bold" fill="#c90">swap(5, 2)</text>
+
+  <!-- ===== 第 4 帧：swap 结果 ===== -->
+  <text x="20" y="330" font-size="12" font-weight="bold" fill="#555">结果</text>
+  <text x="235" y="310" text-anchor="middle" font-size="10" font-weight="bold" fill="#36c">ge=2</text>
+  <text x="290" y="310" text-anchor="middle" font-size="10" font-weight="bold" fill="#393">le=3</text>
+  <rect x="100" y="316" width="50" height="36" rx="4" fill="#ffe5e5" stroke="#c00" stroke-width="1.5"/>
+  <rect x="155" y="316" width="50" height="36" rx="4" fill="#e8f5e8" stroke="#393" stroke-width="1.5"/>
+  <rect x="210" y="316" width="50" height="36" rx="4" fill="#e8f5e8" stroke="#393" stroke-width="1.5"/>
+  <rect x="265" y="316" width="50" height="36" rx="4" fill="#e8e8ff" stroke="#36c" stroke-width="1.5"/>
+  <rect x="320" y="316" width="50" height="36" rx="4" fill="#e8e8ff" stroke="#36c" stroke-width="1.5"/>
+  <text x="125" y="339" text-anchor="middle" font-size="15" font-weight="bold" fill="#900">3</text>
+  <text x="180" y="339" text-anchor="middle" font-size="15" fill="#262">1</text>
+  <text x="235" y="339" text-anchor="middle" font-size="15" fill="#262">2</text>
+  <text x="290" y="339" text-anchor="middle" font-size="15" fill="#239">5</text>
+  <text x="345" y="339" text-anchor="middle" font-size="15" fill="#239">4</text>
+  <text x="440" y="330" font-size="11" fill="#888">++le, --ge → le&gt;ge 退出</text>
+  <!-- 归位箭头在格子下方 -->
+  <path d="M125,354 C125,392 235,392 235,354" fill="none" stroke="#c00" stroke-width="2" stroke-dasharray="5,3" marker-start="url(#ah-r2)" marker-end="url(#ah-r)"/>
+  <text x="180" y="404" text-anchor="middle" font-size="11" font-weight="bold" fill="#c00">swap(pivot, ge)</text>
+
+  <!-- ===== 第 5 帧：归位 ===== -->
+  <text x="20" y="446" font-size="12" font-weight="bold" fill="#555">归位</text>
+  <rect x="100" y="428" width="50" height="36" rx="4" fill="#e8f5e8" stroke="#393" stroke-width="1.5"/>
+  <rect x="155" y="428" width="50" height="36" rx="4" fill="#e8f5e8" stroke="#393" stroke-width="1.5"/>
+  <rect x="210" y="428" width="50" height="36" rx="4" fill="#ffe5e5" stroke="#c00" stroke-width="2.5"/>
+  <rect x="265" y="428" width="50" height="36" rx="4" fill="#e8e8ff" stroke="#36c" stroke-width="1.5"/>
+  <rect x="320" y="428" width="50" height="36" rx="4" fill="#e8e8ff" stroke="#36c" stroke-width="1.5"/>
+  <text x="125" y="451" text-anchor="middle" font-size="15" fill="#262">2</text>
+  <text x="180" y="451" text-anchor="middle" font-size="15" fill="#262">1</text>
+  <text x="235" y="451" text-anchor="middle" font-size="15" font-weight="bold" fill="#900">3</text>
+  <text x="290" y="451" text-anchor="middle" font-size="15" fill="#239">5</text>
+  <text x="345" y="451" text-anchor="middle" font-size="15" fill="#239">4</text>
+  <text x="235" y="478" text-anchor="middle" font-size="11" font-weight="bold" fill="#c00">pivot 就位！</text>
+  <text x="440" y="446" font-size="11" fill="#888">返回 ge=2</text>
+
+  <!-- 底部图例 -->
+  <line x1="60" y1="500" x2="640" y2="500" stroke="#ddd" stroke-width="1"/>
+  <text x="350" y="523" text-anchor="middle" font-size="12" fill="#555">每一步结束后不变量都成立：</text>
+  <rect x="130" y="535" width="12" height="12" rx="2" fill="#e8f5e8" stroke="#393" stroke-width="1"/>
+  <text x="148" y="546" font-size="11" fill="#555">&#x2264; pivot</text>
+  <rect x="230" y="535" width="12" height="12" rx="2" fill="#fff8dc" stroke="#c90" stroke-width="1"/>
+  <text x="248" y="546" font-size="11" fill="#555">未处理</text>
+  <rect x="320" y="535" width="12" height="12" rx="2" fill="#e8e8ff" stroke="#36c" stroke-width="1"/>
+  <text x="338" y="546" font-size="11" fill="#555">&#x2265; pivot</text>
+  <rect x="410" y="535" width="12" height="12" rx="2" fill="#ffe5e5" stroke="#c00" stroke-width="1"/>
+  <text x="428" y="546" font-size="11" fill="#555">pivot</text>
+  <text x="350" y="575" text-anchor="middle" font-size="12" font-weight="bold" fill="#555">这就是"锚定到不变量"的含义</text>
+</svg>

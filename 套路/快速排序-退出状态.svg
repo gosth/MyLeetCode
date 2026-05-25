@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" width="760" height="280" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif" font-size="13">
+  <!-- 标题 -->
+  <text x="380" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">外层退出时 le &gt; ge，区间图变为：</text>
+
+  <!-- 顶部下标 -->
+  <text x="60"  y="50" text-anchor="middle" font-size="11" fill="#666">left</text>
+  <text x="240" y="50" text-anchor="middle" font-size="11" fill="#666">left+1 ... ge</text>
+  <text x="520" y="50" text-anchor="middle" font-size="11" fill="#666">le ... right</text>
+
+  <!-- 三个区块 -->
+  <rect x="30"  y="60" width="60"  height="70" rx="8" fill="#ffe5e5" stroke="#c00" stroke-width="2"/>
+  <rect x="100" y="60" width="280" height="70" rx="8" fill="#e8f5e8" stroke="#393" stroke-width="2"/>
+  <rect x="390" y="60" width="260" height="70" rx="8" fill="#e8e8ff" stroke="#36c" stroke-width="2"/>
+
+  <!-- pivot -->
+  <text x="60"  y="90" text-anchor="middle" font-weight="bold" font-size="14" fill="#900">pivot</text>
+  <text x="60"  y="108" text-anchor="middle" font-size="11" fill="#900">nums[left]</text>
+
+  <!-- 左区 -->
+  <text x="240" y="88" text-anchor="middle" font-weight="bold" font-size="14" fill="#262">≤ pivot</text>
+  <text x="240" y="108" text-anchor="middle" font-size="11" fill="#262">左已处理区</text>
+  <text x="240" y="124" text-anchor="middle" font-size="12" fill="#444" font-family="ui-monospace, Menlo, monospace">[left+1, le)</text>
+
+  <!-- 右区 -->
+  <text x="520" y="88" text-anchor="middle" font-weight="bold" font-size="14" fill="#239">≥ pivot</text>
+  <text x="520" y="108" text-anchor="middle" font-size="11" fill="#239">右已处理区</text>
+  <text x="520" y="124" text-anchor="middle" font-size="12" fill="#444" font-family="ui-monospace, Menlo, monospace">(ge, right]</text>
+
+  <!-- ge 指针 -->
+  <line x1="360" y1="135" x2="360" y2="148" stroke="#393" stroke-width="2"/>
+  <polygon points="355,148 365,148 360,155" fill="#393"/>
+  <text x="360" y="170" text-anchor="middle" font-size="12" font-weight="bold" fill="#393" font-family="ui-monospace, Menlo, monospace">ge</text>
+
+  <!-- le 指针 -->
+  <line x1="400" y1="135" x2="400" y2="148" stroke="#36c" stroke-width="2"/>
+  <polygon points="395,148 405,148 400,155" fill="#36c"/>
+  <text x="400" y="170" text-anchor="middle" font-size="12" font-weight="bold" fill="#36c" font-family="ui-monospace, Menlo, monospace">le</text>
+
+  <!-- 分隔线 -->
+  <line x1="30" y1="185" x2="730" y2="185" stroke="#ddd" stroke-width="1"/>
+
+  <!-- 正确的 swap -->
+  <text x="40" y="210" font-size="12" fill="#393" font-weight="bold">✓ swap(nums[left], nums[ge])</text>
+  <text x="40" y="230" font-size="12" fill="#555">pivot 与一个 ≤ pivot 的元素交换 → 左区仍然全部 ≤ pivot</text>
+
+  <!-- 错误的 swap -->
+  <text x="40" y="255" font-size="12" fill="#c00" font-weight="bold">✗ swap(nums[left], nums[le])</text>
+  <text x="40" y="275" font-size="12" fill="#555">pivot 与一个 ≥ pivot 的元素交换 → 该元素跑到最左，破坏左区</text>
+</svg>
